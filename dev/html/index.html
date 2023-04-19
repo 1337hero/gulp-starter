@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta charset="utf-8">
+
+        <title>{{ siteTitle }}</title>
+        <meta content="{{ description }}" name="description">
+        <meta content="{{ author }}" name="author">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <link href="./img/favicon.webp" rel="icon" type="image/webp">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+
+
+        <link href="./css/styles.css" rel="stylesheet" type="text/css">
+
+
+    </head>
+    <body>
+        <main class="container">
+            <!-- Intro --->
+            <header>
+                <% inc/header.html %>
+            </header>
+            <div>
+                <section>
+                    <img class="avatar" src="img/gulp_generator_logo.webp" alt="Gulp" >
+
+                    <h1>{{ pageTitle }}</h1>
+                    <h2>{{ subTitle }}</h2>
+
+
+                </section>
+            </div>
+            <footer>
+                <% inc/footer.html %>
+            </footer>
+        </main>
+
+        <% inc/includes.html %>
+    </body>
+</html>
