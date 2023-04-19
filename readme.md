@@ -1,16 +1,46 @@
-# Gulp Static Starter Workflow Workflow
+# Gulp Static Starter Workflow
 
-This is a basic, and ever evolving workflow for using Gulp with various web projects. I wanted something could add to very simple static projects. Such as landing pages. It features a few fucntions to make it easier to develop more robust static pages.
+This project is a *starter kit* for building static sites with an emphasis on maintaing an organized project structure. I use HTML Partials and Nunjucks to add some ....
 
-Currently this is configured around HTML static builds.
+## INSTALLATION
 
+If you're already up and running with most of the usual Node ecosystem tools this starter kit won't require much additional effort.
 
+### REQUIRED
+
+* Install [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm).
+* Install [Gulp](http://gulpjs.com/): `npm install -g gulp`.
+* Download or clone this repo: `git clone https://github.com/1337hero/gulp-starter.git`.
 
 TO-DO List
 
 Need to improve this README
 
+## Project Structure
 
+````bash
+my-gulp-project/                  // Your project folder
+├── gulpfile.js                   // Gulp Configuration
+│
+├── dev                           // Development
+│   ├── sass                      // CSS
+│   │   ├── app.scss     
+│   │   ├── variables.scss  
+│   │   └── page.scss
+│   │ 
+│   ├── html
+│   │   ├── inc                   // html partials
+│   │   └── index.html
+│   ├── img                       // put images here
+│   ├── js                        // put your javascript here
+│   └── fonts                     // fonts go here
+│
+└── dist                          // 
+    ├── css
+    ├── js
+    ├── fonts
+    └── img                    // 
 
+````
 
 ## Contributors welcome! Cheers.
