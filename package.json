@@ -9,7 +9,9 @@
   "author": "1337hero",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/1337hero/gulp-starter/blob/master/readme.md",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-purgecss": "^5.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "browser-sync": "^2.28.3",

@@ -22,14 +22,17 @@ Need to improve this README
 my-gulp-project/                  // Your project folder
 ├── gulpfile.js                   // Gulp Configuration
 │
-├── dev                           // Development
-│   ├── sass                      // CSS
-│   │   ├── app.scss     
-│   │   ├── variables.scss  
+├── dev                           // Development Folder
+│   ├── sass                      // SASS
+│   │   ├── app.scss              
+│   │   ├── variables.scss     
 │   │   └── page.scss
 │   │ 
-│   ├── html
-│   │   ├── inc                   // html partials
+│   ├── html                      // Site Files go here
+│   │   └── inc                   // html partials
+│   │   │   ├── header.html 
+│   │   │   └── footer.html 
+│   │   ├── about.html
 │   │   └── index.html
 │   ├── img                       // put images here
 │   ├── js                        // put your javascript here

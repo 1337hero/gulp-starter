@@ -8,6 +8,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     partials = require('gulp-inject-partials'),
     jsImport = require('gulp-js-import'),
+    purgecss = require('gulp-purgecss'),
     cssnano = require('cssnano'),
     htmlmin = require('gulp-htmlmin'),
     postcss = require('gulp-postcss'),
@@ -75,13 +76,11 @@ function img() {
 }
 
 // Do Javascript Stuff 
-function javascript() {
+function js() {
     return gulp.src(paths.js)
         .pipe(maps.init())
         .pipe(jsImport({hideConsole: false}))
         .pipe(concat('scripts.js'))
-        .pipe(uglify())
-        .pipe(rename('scripts.min.js'))
         .pipe(maps.write('./'))
         .pipe(gulp.dest(dest + '/js'))
         .pipe(browserSync.stream());
@@ -91,6 +90,7 @@ function javascript() {
 function watchFiles() {
     gulp.watch(src + '/sass/**', css);
     gulp.watch(src + '/html/**', html);
+    gulp.watch(src + '/js/**', js);
 }
 
 // Run a server 
@@ -105,9 +105,22 @@ function server() {
     browserSync.watch(dest + '/**/*.*').on('change', browserSync.reload);
 }
 
+// Purge CSS
+function purgecssRejected() {
+    return gulp.src('dev/sass/*.scss')
+        .pipe(rename({
+            suffix: '.rejected'
+        }))
+        .pipe(purgecss({
+            content: ['dev/html/*.html'],
+        }))
+        .pipe(gulp.dest('build/css'));
+}
+gulp.task('purgecss-rejected', gulp.series(purgecssRejected));
+
 // Complex tasks
-const dev = gulp.parallel(html, css, fonts, img, server);
-const build = gulp.series(html, css, fonts, img);
+const dev = gulp.parallel(html, css, js, fonts, img, server);
+const build = gulp.series(html, css, js, fonts, img);
 
 // Export tasks
 exports.default = dev;
